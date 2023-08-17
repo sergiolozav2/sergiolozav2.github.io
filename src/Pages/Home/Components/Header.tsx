@@ -17,7 +17,7 @@ export function Header() {
     <header className="z-10 fixed left-0 right-0">
       <div
         className={`${
-          menu ? "-translate-y-full" : ""
+          menu ? "" : "-translate-y-full"
         } duration-200 w-full h-screen transition-transform origin-top absolute bg-[#131c27]`}
       >
         <div className="gap-8 h-full flex flex-col items-center justify-center text-stone-100">
