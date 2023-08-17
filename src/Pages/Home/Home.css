@@ -1,0 +1,31 @@
+
+
+
+.radial-background {
+    background-color: #1b2735;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+} 
+
+
+.hover-underline {
+    position: relative;
+}
+
+.hover-underline::after {
+    content: '';
+    position: absolute;
+    background-color: rgb(215, 214, 213);
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    height: 2px;
+    transition: all 0.5s;
+}
+.hover-underline:hover::after {
+    transform: scaleX(1);
+}
+
+
+

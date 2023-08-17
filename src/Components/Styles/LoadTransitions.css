@@ -1,0 +1,45 @@
+.on-load-transition {
+    opacity: 0;
+    animation: fadeInAnimation ease 2.5s forwards, slideInTopAnimation ease 0.8s forwards;
+}
+
+.fade-out-down-transition {
+    opacity: 1;
+    animation: fadeOutAnimation ease 0.5s forwards, slideOutBottomAnimation ease 1.5s forwards;
+}
+
+@keyframes slideInTopAnimation {
+    0% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOutBottomAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+@keyframes fadeOutAnimation {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
