@@ -1,6 +1,6 @@
 import { FaLocationArrow } from "react-icons/fa";
 import { TypeAnimationText } from "./Components/TypeAnimationText";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "../../Components/Styles/LoadTransitions.css";
 import { ROUTE_PROJECTS } from "../../Routes/ConstantRoutes";
@@ -14,7 +14,7 @@ export function Welcome() {
   return (
     <div className="min-h-screen w-full justify-center items-center flex flex-col">
       <div className="px-4 max-w-2xl leading-tight text-center justify-center items-center flex-col flex  text-stone-100">
-        <h1 className="on-load-transition text-2xl sm:text-4xl">
+        <h1 className="on-load-transition text-3xl sm:text-4xl">
           Hola, soy&nbsp;
           <TypeAnimationText
             className="px-1 whitespace-nowrap w-fit font-bold text-stone-900 bg-stone-50"
