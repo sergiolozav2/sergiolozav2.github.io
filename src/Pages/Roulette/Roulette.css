@@ -1,0 +1,28 @@
+.spin-roulette {
+  animation: spin 10s linear forwards;
+}
+
+.up-arrow {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+
+  border-bottom: 50px solid rgb(87, 87, 87);
+}
+
+:root {
+  --spin-deg: 5000deg;
+}
+
+@keyframes spin {
+  10% {
+    -webkit-transform: rotate(360deg);
+  }
+  90% {
+    -webkit-transform: rotate(var(--spin-deg));
+  }
+  100% {
+    -webkit-transform: rotate(calc(var(--spin-deg) + 100deg));
+  }
+}

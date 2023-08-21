@@ -25,12 +25,16 @@ interface HeaderEnterAnimateProps {
   menu: boolean;
   children: ReactNode
   transitionDelay: number
+  noTranslation?: boolean;
+  className?:string
 }
 export function HeaderEnterAnimate(props: HeaderEnterAnimateProps) {
+
+  const translate = (props.noTranslation?"":"-translate-y-5")
   return (
     <div
-      className={`transition-[opacity_transform] ${
-        props.menu ? "opacity-100 duration-700" : "-translate-y-5 opacity-0 duration-0"
+      className={`${props.className} transition-[opacity,transform] ${
+        props.menu ? "opacity-100 duration-700" : `${translate} opacity-0 duration-0`
       }`}
 
       style={{

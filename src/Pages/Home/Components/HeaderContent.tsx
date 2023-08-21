@@ -4,7 +4,7 @@ import { HeaderEnterAnimate, HeaderLink } from "./HeaderLink";
 
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
-import "../Home.css";
+import "./StarsCustom.css";
 
 interface HeaderContentProps {
   closeMenu: MouseEventHandler;
@@ -13,11 +13,22 @@ interface HeaderContentProps {
 
 export function HeaderContent(props: HeaderContentProps) {
   return (
-    <div className="gap-8 radial-background h-full flex flex-col items-center justify-center text-stone-100">
-      <div className="text-2xl flex flex-col gap-10 mr-8">
+    <div className="gap-8 radial-background relative h-full flex flex-col items-center justify-center text-stone-100">
+      <HeaderEnterAnimate
+        menu={props.menu}
+        noTranslation={true}
+        transitionDelay={800}
+      >
+        {props.menu ? (
+          <div className="stars-custom absolute left-0 top-0 overflow-hidden"></div>
+        ) : (
+          <></>
+        )}
+      </HeaderEnterAnimate>
+      <div className="mb-16 text-2xl sm:text-4xl flex flex-col gap-10">
         <HeaderEnterAnimate menu={props.menu} transitionDelay={700}>
           <div className="font-extrabold flex items-end">
-            <p className="text-lg mr-4 font-normal"> 1 </p>
+            <p className="text-base sm:text-lg mr-4 font-normal"> 1 </p>
             <HeaderLink
               title="Inicio"
               to={ROUTE_HOME}
@@ -27,7 +38,7 @@ export function HeaderContent(props: HeaderContentProps) {
         </HeaderEnterAnimate>
         <HeaderEnterAnimate menu={props.menu} transitionDelay={815}>
           <div className="font-extrabold flex items-end">
-            <p className="text-lg mr-4 font-normal"> 2 </p>
+            <p className="text-base sm:text-lg mr-4 font-normal"> 2 </p>
 
             <HeaderLink
               title="Proyectos"
@@ -39,7 +50,7 @@ export function HeaderContent(props: HeaderContentProps) {
 
         <HeaderEnterAnimate menu={props.menu} transitionDelay={930}>
           <div className="font-extrabold flex items-end">
-            <p className="text-lg mr-4 font-normal"> 3 </p>
+            <p className="text-base sm:text-lg mr-4 font-normal"> 3 </p>
             <HeaderLink
               title="Acerca de mí"
               to={ROUTE_HOME}
@@ -48,6 +59,12 @@ export function HeaderContent(props: HeaderContentProps) {
           </div>
         </HeaderEnterAnimate>
       </div>
+
+      <HeaderEnterAnimate menu={props.menu} transitionDelay={1100}>
+        <div className="text-stone-100 text-xs sm:text-base">
+          Por Sergio Loza
+        </div>
+      </HeaderEnterAnimate>
     </div>
   );
 }
