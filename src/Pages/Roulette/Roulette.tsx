@@ -20,13 +20,14 @@ export function Roulette() {
 
     setTimeout(() => {
       setModal(true);
-    }, 10000);
+    }, 7000);
   }
   function closeModal() {
     setModal(false);
   }
 
   useEffect(() => {
+    document.title = "Ruleta";
     return () => {
       if (timer !== undefined) {
         clearTimeout(timer);
@@ -37,15 +38,20 @@ export function Roulette() {
   return (
     <div className="h-screen w-screen relative bg-white">
       {modal ? (
-        <div onClick={closeModal} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 grid place-items-center z-20 w-64 h-36 bg-white border-2 border-black">
+        <div
+          onClick={closeModal}
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 grid place-items-center z-20 w-64 h-36 bg-white border-2 border-black"
+        >
           <p className="text-5xl"> DULCES! </p>
         </div>
       ) : (
         <></>
-      )}{" "}
-      <div className="absolute z-10 up-arrow right-0 top-[37%] -rotate-90 border-b-gray-700"></div>
+      )}
       <div className="pt-4 flex-col flex items-center justify-center">
-        <img className={spin} style={style} src={RouletteJpeg} />
+        <div className="relative">
+          <img className={spin} style={style} src={RouletteJpeg} />
+          <div className="absolute z-10 up-arrow -right-12 top-1/2 -translate-y-1/2 -rotate-90 border-b-gray-700"></div>
+        </div>
         <div className="mt-2 z-10 text-2xl">
           <div className="flex items-center">
             <div className="w-4 h-4 mr-2 rounded-full bg-green-300"></div>
